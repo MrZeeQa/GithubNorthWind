@@ -36,7 +36,7 @@ public partial class AddProducts : System.Web.UI.Page
 
         protected void LoadDropDownListSuppliers()
         {
-            SupplierCS Supp = new SupplierCS();
+            SuppliersCS Supp = new SuppliersCS();
             DropDownListSuppliers.DataSource = Supp.GetSuppliers();
             DropDownListSuppliers.DataValueField = "SupplierID";
             DropDownListSuppliers.DataTextField = "CompanyName";
@@ -65,7 +65,7 @@ public partial class AddProducts : System.Web.UI.Page
         {
             try
             {
-                ProductsCS NewProd = new ProductsCS();
+                ProductCS NewProd = new ProductCS();
                 NewProd.AddNewProduct(TextBoxProductName.Text,
                 Convert.ToInt32(DropDownListSuppliers.SelectedItem.Value),
                 Convert.ToInt32(DropDownListCategories.SelectedItem.Value),
