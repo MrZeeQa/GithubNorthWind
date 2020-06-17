@@ -24,4 +24,16 @@ public class EmployeeCS
         SqlDataReader Reader = command.ExecuteReader(CommandBehavior.CloseConnection);
         return Reader;
     }
+
+    public SqlDataReader Chinook_GetEmployeeData()
+    {
+        SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Connstring"].ConnectionString);
+        SqlCommand command = new SqlCommand();
+        command.Connection = connection;
+        command.CommandType = CommandType.StoredProcedure;
+        command.CommandText = "Chinook_GetEmployeeData";
+        connection.Open();
+        SqlDataReader Reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+        return Reader;
+    }
 }
